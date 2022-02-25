@@ -1,10 +1,7 @@
 package desafioSicredi.Sicredi;
 
-import org.hamcrest.core.StringContains;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+
 import static org.hamcrest.Matchers.*;
 
 import static io.restassured.RestAssured.*;

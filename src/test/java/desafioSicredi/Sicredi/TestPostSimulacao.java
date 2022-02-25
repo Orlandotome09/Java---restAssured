@@ -1,10 +1,8 @@
 package desafioSicredi.Sicredi;
 
-import org.hamcrest.core.StringContains;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+
 import static org.hamcrest.Matchers.*;
 
 import static io.restassured.RestAssured.*;
@@ -18,7 +16,7 @@ public class TestPostSimulacao {
 		given()
 			.log().all()
 			.contentType("application/json")
-			.body("{\"nome\": \"test\", \"cpf\": \"n77787981a\", \"email\": \"test@test.com\", \"valor\": \"3000\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
+			.body("{\"nome\": \"test\", \"cpf\": \"asddn77787981a\", \"email\": \"test@test.com\", \"valor\": \"3000\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
 		.when()
 			.post("http://localhost:8080/api/v1/simulacoes")
 		.then()
@@ -26,7 +24,7 @@ public class TestPostSimulacao {
 			.statusCode(201)
 			.body("id", is(notNullValue()))
 			.body("nome", is("test"))
-			.body("cpf", is("n77787981a"))
+			.body("cpf", is("asddn77787981a"))
 			.body("email", is("test@test.com"))
 			.body("valor", is(3000))
 			.body("parcelas", is(3))
@@ -40,7 +38,7 @@ public class TestPostSimulacao {
 		given()
 			.log().all()
 			.contentType("application/json")
-			.body("{\"nome\": \"test\", \"cpf\": \"7778798o1a\", \"email\": \"test@test.com\", \"valor\": \"999\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
+			.body("{\"nome\": \"test\", \"cpf\": \"8552220\", \"email\": \"test@test.com\", \"valor\": \"999\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
 		.when()
 			.post("http://localhost:8080/api/v1/simulacoes")
 		.then()
@@ -54,7 +52,7 @@ public class TestPostSimulacao {
 		given()
 			.log().all()
 			.contentType("application/json")
-			.body("{\"nome\": \"test\", \"cpf\": \"a7778798oaa\", \"email\": \"test@test.com\", \"valor\": \"40.001\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
+			.body("{\"nome\": \"test\", \"cpf\": \"a7778798oaa12\", \"email\": \"test@test.com\", \"valor\": \"40.001\", \"parcelas\": \"3\", \"seguro\": \"true\"}")
 		.when()
 			.post("http://localhost:8080/api/v1/simulacoes")
 		.then()
@@ -83,7 +81,7 @@ public class TestPostSimulacao {
 		given()
 			.log().all()
 			.contentType("application/json")
-			.body("{\"nome\": \"test\", \"cpf\": \"7778798oaaacq1\", \"email\": \"test@test.com\", \"valor\": \"40.000\", \"parcelas\": \"49\", \"seguro\": \"true\"}")
+			.body("{\"nome\": \"test\", \"cpf\": \"7ad8798oaaacq1\", \"email\": \"test@test.com\", \"valor\": \"40.000\", \"parcelas\": \"49\", \"seguro\": \"true\"}")
 		.when()
 			.post("http://localhost:8080/api/v1/simulacoes")
 		.then()
